@@ -1,0 +1,44 @@
+﻿<Window x:Class="Lab07.Views.ManCategoria"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab07.Views"
+        mc:Ignorable="d"
+        Title="ManCategoria" Height="350" Width="450">
+
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label>ID</Label>
+                <Label x:Name="lblID" Content="{Binding ID}"></Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label >Nombre</Label>
+                <TextBox x:Name="txtNombre" Margin="53px 0px 0px 0px" 
+                          Text="{Binding Nombre}" Width="300px"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label >Descripcion</Label>
+                <TextBox x:Name="txtDescripcion" Margin="30px 0px 0px 0px" 
+                         Text="{Binding Descripcion}" Width="300px"/>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="btnGuardar" Margin="10px 10px 10px 10px"
+                    Command="{Binding GrabarComand}" Height="50"
+                    CommandParameter="{Binding ElementName = btnGuardar}" Width="120">Grabar</Button>
+            <Button x:Name="btnCerrar" Margin="10px 10px 10px 10px"
+                    Command="{Binding CerrarCommand}" Height="50"
+                    CommandParameter="{Binding ElementName = btnCerrar}" Width="120">Cerrar</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
